@@ -29,7 +29,6 @@ public class SC_FadePlatform : SC_Platform
         {
             if(Time.time > startTime + turnTime)
             {
-                Debug.Log(Time.time);
                 curSpriteRenderer.enabled = !curSpriteRenderer.enabled;
                 curBoxCollider2D.enabled = !curBoxCollider2D.enabled;
                 startTime = Time.time;

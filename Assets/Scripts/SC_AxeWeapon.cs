@@ -31,4 +31,9 @@ public class SC_AxeWeapon : MonoBehaviour, IPickableObject, IWeapon
             objectAmount += amount;
         }
     }
+
+    public int GetObjectCurrentAmount()
+    {
+        return objectAmount;
+    }
 }
