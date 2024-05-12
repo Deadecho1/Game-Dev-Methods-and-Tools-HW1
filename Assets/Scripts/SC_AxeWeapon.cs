@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_AxeWeapon : PickableUsableObject, IWeapon
+public class SC_AxeWeapon : MonoBehaviour, IPickableUsableObject, IWeapon
 {
     public GameObject _axeBall;
     public static event Action OnAxeThrow;
+    public int objectAmount = 3;
+    public int objectUseCost = 1;
 
     private void OnEnable()
     {
@@ -16,7 +18,6 @@ public class SC_AxeWeapon : PickableUsableObject, IWeapon
     {
         SC_AxePickup.OnAxePickupCollision -= OnAxePickupCollision;
     }
-
 
     public void Shoot()
     {
@@ -36,7 +37,7 @@ public class SC_AxeWeapon : PickableUsableObject, IWeapon
         }
     }
 
-    public override void AddObject(int amount)
+    public void AddObject(int amount)
     {
         if(objectAmount + amount >= 0)
         {
@@ -48,7 +49,7 @@ public class SC_AxeWeapon : PickableUsableObject, IWeapon
         }
     }
 
-    public override int GetObjectCurrentAmount()
+    public int GetObjectCurrentAmount()
     {
         return objectAmount;
     }
@@ -56,5 +57,10 @@ public class SC_AxeWeapon : PickableUsableObject, IWeapon
     private void OnAxePickupCollision(int pickupAmount)
     {
         AddObject(pickupAmount);
+    }
+
+    public void Use()
+    {
+        Shoot();
     }
 }
