@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_AxeWeapon : MonoBehaviour, IWeaponReload
+public class SC_AxeWeapon : MonoBehaviour, IPickableObject, IWeapon
 {
     public GameObject _axeBall;
-    private bool _loaded = false;
+    public int objectAmount = 0;
 
     public void Shoot()
     {
-        if (_loaded && _axeBall != null)
+        if (objectAmount > 0 && _axeBall != null)
         {
             GameObject axe = Instantiate(_axeBall, transform.position, new Quaternion());
             SC_Axe scAxe = axe.GetComponent<SC_Axe>();
             if (scAxe != null)
             {
-                _loaded = false;
+                objectAmount -= 1;
                 float direction = 1;
                 if (transform.parent != null)
                     direction = transform.parent.localScale.x;
@@ -23,10 +23,12 @@ public class SC_AxeWeapon : MonoBehaviour, IWeaponReload
             }
         }
     }
-    public void Reload()
-    {
-        Debug.Log("Axe Was Loaded!");
-        _loaded = true;
-    }
 
+    public void AddObject(int amount)
+    {
+        if(amount >= 0)
+        {
+            objectAmount += amount;
+        }
+    }
 }
