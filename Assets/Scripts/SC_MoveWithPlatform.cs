@@ -6,7 +6,7 @@ public class SC_MoveWithPlatform : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Resource"))
             collision.transform.SetParent(transform);
     }
     void OnCollisionExit2D(Collision2D collision)

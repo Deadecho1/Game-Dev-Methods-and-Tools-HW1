@@ -9,17 +9,23 @@ public class SC_HPGUIManager : MonoBehaviour
     private void OnEnable()
     {
         SC_HPManager.OnPlayerLoseLife += OnPlayerLoseLife;
+        SC_HPManager.OnPlayerGainLife += OnPlayerGainLife;
     }
 
     private void OnDisable()
     {
         SC_HPManager.OnPlayerLoseLife -= OnPlayerLoseLife;
+        SC_HPManager.OnPlayerGainLife -= OnPlayerGainLife;
     }
     private void Start()
     {
         StartCoroutine(UpdateGUI());
     }
     private void OnPlayerLoseLife()
+    {
+        StartCoroutine(UpdateGUI());
+    }
+    private void OnPlayerGainLife()
     {
         StartCoroutine(UpdateGUI());
     }
