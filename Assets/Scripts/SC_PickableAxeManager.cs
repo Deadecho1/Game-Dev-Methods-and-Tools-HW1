@@ -20,25 +20,20 @@ public class SC_PickableAxeManager : MonoBehaviour
     }
     private void Start()
     {
-        UpdateGUI();
+        StartCoroutine(UpdateGUI());
     }
     private void OnAxePickup(int amount)
     {
-        UpdateGUI();
+        StartCoroutine(UpdateGUI());
     }
     private void OnAxeThrow()
     {
-        UpdateGUI();
+        StartCoroutine(UpdateGUI());
     }
 
-    private void UpdateGUI()
+    IEnumerator UpdateGUI()
     {
-        StartCoroutine(UpdateGUIWait()); // wait 1 frame for data to set, then update
-    }
-
-    IEnumerator UpdateGUIWait()
-    {
-        yield return null;
+        yield return null; // wait 1 frame before updating for all values to set
         TextMeshProUGUI axeGui = GameObject.Find("Txt_Axes").GetComponent<TextMeshProUGUI>();
         if (axeGui != null)
         {

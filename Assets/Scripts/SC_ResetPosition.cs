@@ -7,17 +7,17 @@ public class SC_ResetPosition : MonoBehaviour
     private Vector3 startPositon;
     private void OnEnable()
     {
-        SC_Death.OnSpikeCollision += OnResetPosition;
+        SC_HPManager.OnPlayerLoseLife += ResetPosition;
     }
     private void OnDisable()
     {
-        SC_Death.OnSpikeCollision -= OnResetPosition;
+        SC_HPManager.OnPlayerLoseLife -= ResetPosition;
     }
     void Awake()
     {
         startPositon = transform.position;
     }
-    private void OnResetPosition()
+    private void ResetPosition()
     {
         transform.position = startPositon;
     }
