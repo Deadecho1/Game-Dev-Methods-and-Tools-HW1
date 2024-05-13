@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SC_PickableAxeManager : MonoBehaviour
 {
-    public SC_AxeWeapon _axeRef;
+    public SC_AxeLimitedUse _axeUseRef;
     private void OnEnable()
     {
         SC_AxePickup.OnAxePickupCollision += OnAxePickup;
@@ -42,7 +42,7 @@ public class SC_PickableAxeManager : MonoBehaviour
         TextMeshProUGUI axeGui = GameObject.Find("Txt_Axes").GetComponent<TextMeshProUGUI>();
         if (axeGui != null)
         {
-            axeGui.text = "Axes: " + _axeRef.GetObjectCurrentAmount();
+            axeGui.text = "Axes: " + _axeUseRef.GetObjectCurrentAmount();
         }
     }
 }
