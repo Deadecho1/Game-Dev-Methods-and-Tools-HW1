@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SC_Death : MonoBehaviour
+public class SC_DamagingObstacle : MonoBehaviour
 {
-    public static event Action OnSpikeCollision;
+    public static event Action OnDamageCollision;
 
-    public static event Action<GameObject> OnSpikeCollisionGeneral;
+    public static event Action<GameObject> OnDamageCollisionGeneral;
 
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Player")
         {
-            OnSpikeCollision?.Invoke();
+            OnDamageCollision?.Invoke();
         }
         else
         {
-            OnSpikeCollisionGeneral?.Invoke(col.gameObject);
+            OnDamageCollisionGeneral?.Invoke(col.gameObject);
         }
     }
 }

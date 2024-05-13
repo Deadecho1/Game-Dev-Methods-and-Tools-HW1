@@ -12,16 +12,18 @@ public class SC_HPManager : MonoBehaviour
     public static event Action OnGameOver;
     private void OnEnable()
     {
-        SC_Death.OnSpikeCollision += OnSpikeCollision;
+        SC_KillCollision.OnKillCollision += OnKillCollision;
+        SC_DamagingObstacle.OnDamageCollision += OnDamageCollision;
         SC_HealthPickup.OnHealthPickupCollision += OnHealthPickupCollision;
     }
 
     private void OnDisable()
     {
-        SC_Death.OnSpikeCollision -= OnSpikeCollision;
+        SC_KillCollision.OnKillCollision -= OnKillCollision;
+        SC_DamagingObstacle.OnDamageCollision -= OnDamageCollision;
         SC_HealthPickup.OnHealthPickupCollision -= OnHealthPickupCollision;
     }
-    private void OnSpikeCollision()
+    private void OnDamageCollision()
     {
         SC_Invincible invincibleRef = GetComponent<SC_Invincible>();
         if(invincibleRef == null || !invincibleRef.IsInvincible)
@@ -33,6 +35,10 @@ public class SC_HPManager : MonoBehaviour
     {
         OnPlayerGainLife?.Invoke();
         HpResource.AddObject(amount);
+    }
+    private void OnKillCollision()
+    {
+        Death();
     }
 
     public void Death()
