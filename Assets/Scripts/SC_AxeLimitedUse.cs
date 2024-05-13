@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_AxeLimitedUse : MonoBehaviour, IPickableUsableObject
+public class SC_AxeLimitedUse : Resource
 {
     public SC_AxeWeapon axeWeapon;
     public int objectAmount = 3;
@@ -16,7 +16,7 @@ public class SC_AxeLimitedUse : MonoBehaviour, IPickableUsableObject
         SC_AxePickup.OnAxePickupCollision -= OnAxePickupCollision;
     }
 
-    public void AddObject(int amount)
+    public override void AddObject(int amount)
     {
         if (objectAmount + amount >= 0)
         {
@@ -27,9 +27,18 @@ public class SC_AxeLimitedUse : MonoBehaviour, IPickableUsableObject
             objectAmount = 0;
         }
     }
-    public int GetObjectCurrentAmount()
+    public override int GetObjectCurrentAmount()
     {
         return objectAmount;
+    }
+    public override void Use()
+    {
+        if (objectAmount - objectUseCost >= 0)
+        {
+            AddObject(-objectUseCost);
+            axeWeapon.Shoot();
+        }
+
     }
 
     private void OnAxePickupCollision(int pickupAmount)
@@ -37,13 +46,5 @@ public class SC_AxeLimitedUse : MonoBehaviour, IPickableUsableObject
         AddObject(pickupAmount);
     }
 
-    public void Use()
-    {
-        if(objectAmount - objectUseCost >= 0)
-        {
-            AddObject(-objectUseCost);
-            axeWeapon.Shoot();
-        }
-        
-    }
+
 }

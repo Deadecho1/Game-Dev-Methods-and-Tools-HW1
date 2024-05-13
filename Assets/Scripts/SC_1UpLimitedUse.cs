@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_1UpLimitedUse : MonoBehaviour, IPickableUsableObject
+public class SC_1UpLimitedUse : Resource
 {
     public int objectAmount = 3;
     public int objectUseCost = 1;
     
-    public void AddObject(int amount)
+    public override void AddObject(int amount)
     {
         if (objectAmount + amount >= 0)
         {
@@ -20,12 +20,12 @@ public class SC_1UpLimitedUse : MonoBehaviour, IPickableUsableObject
         }
     }
 
-    public int GetObjectCurrentAmount()
+    public override int GetObjectCurrentAmount()
     {
         return objectAmount;
     }
 
-    public void Use()
+    public override void Use()
     {
         AddObject(-objectUseCost);
     }

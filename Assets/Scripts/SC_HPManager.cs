@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SC_HPManager : MonoBehaviour
 {
-    public SC_1UpLimitedUse HpResource;
+    public Resource HpResource;
 
     public static event Action OnPlayerLoseLife;
     public static event Action OnGameOver;
