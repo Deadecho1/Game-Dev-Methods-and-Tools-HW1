@@ -7,11 +7,25 @@ public class StarInvincible : IPowerUp
     public void ApplyPowerUp(GameObject player)
     {
         Debug.Log("Start Star Invincible");
-        if(player != null)
+        if (player != null)
         {
             SC_Invincible scInvincible = player.GetComponent<SC_Invincible>();
-            if(scInvincible != null)
+            if (scInvincible != null)
                 scInvincible.ActivateInvincibility();
         }
+    }
+
+    public void RemovePowerUp(GameObject player)
+    {
+        if (player != null)
+        {
+            SC_Invincible scInvincible = player.GetComponent<SC_Invincible>();
+            if (scInvincible != null)
+                scInvincible.DeactivateInvincibility();
+        }
+    }
+    public bool IsStackable()
+    {
+        return true;
     }
 }

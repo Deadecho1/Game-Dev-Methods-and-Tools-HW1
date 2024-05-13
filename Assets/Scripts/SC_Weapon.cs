@@ -9,7 +9,7 @@ public class SC_Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && _fireBallWeapon != null)
+        if (Input.GetKeyDown(KeyCode.X) && _fireBallWeapon != null)
             _fireBallWeapon.Shoot();
 
         if (Input.GetKeyDown(KeyCode.Z) && _axeWeapon != null)

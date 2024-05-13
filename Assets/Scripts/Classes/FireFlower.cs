@@ -14,4 +14,19 @@ public class FireFlower : IPowerUp
                 scFireballWeapon.Equip();
         }
     }
+
+    public void RemovePowerUp(GameObject player)
+    {
+        Debug.Log("RemovePowerUp Fire Flower");
+        if (player != null)
+        {
+            SC_FireballWeapon scFireballWeapon = player.GetComponentInChildren<SC_FireballWeapon>();
+            if (scFireballWeapon != null)
+                scFireballWeapon.UnEquip();
+        }
+    }
+    public bool IsStackable()
+    {
+        return false;
+    }
 }

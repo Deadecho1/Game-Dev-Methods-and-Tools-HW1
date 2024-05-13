@@ -21,6 +21,11 @@ public class SC_Invincible : MonoBehaviour
         isInvincible = true;
         GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(powerUpDuration);
+        DeactivateInvincibility();
+    }
+
+    public void DeactivateInvincibility()
+    {
         GetComponent<SpriteRenderer>().color = Color.white;
         isInvincible = false;
     }

@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IPowerUp
 {
     void ApplyPowerUp(GameObject player);
+    void RemovePowerUp(GameObject player);
+    bool IsStackable();
 }
