@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8051235553045612269}
   - component: {fileID: -7726949348604888018}
   - component: {fileID: 3587285162838790774}
+  - component: {fileID: 5342950784551719299}
   m_Layer: 0
   m_Name: Prefab_Axe
-  m_TagString: Untagged
+  m_TagString: FriendlyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.15, y: 1.15}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2.04, y: 2.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,3 +150,15 @@ MonoBehaviour:
   xSpeed: 150
   ySpeed: 250
   destroyTime: 5
+--- !u!114 &5342950784551719299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622351116122189604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9204a0b37e1024495def8341eaa676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
