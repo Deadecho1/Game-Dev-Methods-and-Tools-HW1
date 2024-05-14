@@ -9,8 +9,7 @@ public class SC_SimpleLeftRightWalk : MonoBehaviour
     public float startDirection = 1f;
     private float direction;
     private Rigidbody2D rigid;
-
-    void Awake()
+    private void OnEnable()
     {
         rigid = GetComponent<Rigidbody2D>();
         direction = startDirection;

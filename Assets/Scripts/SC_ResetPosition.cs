@@ -20,5 +20,8 @@ public class SC_ResetPosition : MonoBehaviour
     private void ResetPosition()
     {
         transform.position = startPositon;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if(rb != null )
+            rb.velocity = Vector2.zero; 
     }
 }

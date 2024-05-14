@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class SC_ShootRepeated : MonoBehaviour
 {
-    public float TimeBetweenShots;
-    
+    public Weapon WeaponUsed;
+    public float TimeBetweenShots = 1f;
+
+    private void OnEnable()
+    {
+        StartCoroutine(WaitThenShoot());
+    }
+
+    IEnumerator WaitThenShoot()
+    {
+        yield return new WaitForSeconds(TimeBetweenShots);
+        if (gameObject.activeSelf)
+        {
+            WeaponUsed.Shoot();
+            StartCoroutine(WaitThenShoot());
+        }
+    }
 }
