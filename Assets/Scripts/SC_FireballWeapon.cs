@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_FireballWeapon : MonoBehaviour, IUseableWeapon
+public class SC_FireballWeapon : Weapon
 {
     public GameObject _fireBall;
-    private bool _isEquip = false;
-
-    public void Shoot()
+    public override void Shoot()
     {
-        if(_isEquip && _fireBall != null)
+        if(_fireBall != null)
         {
             GameObject fireBall = Instantiate(_fireBall, transform.position, new Quaternion());
             SC_FireBall scFireball = fireBall.GetComponent<SC_FireBall>();
@@ -21,15 +19,5 @@ public class SC_FireballWeapon : MonoBehaviour, IUseableWeapon
                 scFireball.Shoot(direction);
             }
         }
-    }
-
-    public void Equip()
-    {
-        _isEquip = true;
-    }
-
-    public void UnEquip()
-    {
-        _isEquip = false;
     }
 }

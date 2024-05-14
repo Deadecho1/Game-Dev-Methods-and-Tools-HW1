@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_AxeWeapon : MonoBehaviour, IWeapon
+public class SC_AxeWeapon : Weapon
 {
     public GameObject _axeBall;
     public static event Action OnAxeThrow;
-    public void Shoot()
+    public override void Shoot()
     {
         if (_axeBall != null)
         {

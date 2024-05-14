@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUseableWeapon : IWeapon
+public abstract class Weapon : MonoBehaviour
 {
-    void Equip();
-    void UnEquip();
+    public abstract void Shoot();
 }

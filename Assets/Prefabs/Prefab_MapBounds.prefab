@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8415708252479741857}
   - component: {fileID: 6080752729885135368}
   m_Layer: 0
-  m_Name: MapBounds
+  m_Name: Prefab_MapBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

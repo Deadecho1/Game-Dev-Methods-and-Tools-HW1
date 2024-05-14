@@ -40,11 +40,8 @@ public class SC_AxeLimitedUse : Resource
         }
 
     }
-
     private void OnAxePickupCollision(int pickupAmount)
     {
         AddObject(pickupAmount);
     }
-
-
 }

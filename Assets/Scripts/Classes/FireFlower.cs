@@ -9,7 +9,7 @@ public class FireFlower : IPowerUp
         Debug.Log("ApplyPowerUp Fire Flower");
         if(player != null)
         {
-            SC_FireballWeapon scFireballWeapon = player.GetComponentInChildren<SC_FireballWeapon>();
+            SC_FireballweaponEquippable scFireballWeapon = player.GetComponentInChildren<SC_FireballweaponEquippable>();
             if (scFireballWeapon != null)
                 scFireballWeapon.Equip();
         }
@@ -20,7 +20,7 @@ public class FireFlower : IPowerUp
         Debug.Log("RemovePowerUp Fire Flower");
         if (player != null)
         {
-            SC_FireballWeapon scFireballWeapon = player.GetComponentInChildren<SC_FireballWeapon>();
+            SC_FireballweaponEquippable scFireballWeapon = player.GetComponentInChildren<SC_FireballweaponEquippable>();
             if (scFireballWeapon != null)
                 scFireballWeapon.UnEquip();
         }
