@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class SC_PlatformActivationOnStart : MonoBehaviour
 {
-    public SC_GameManager GameManagerRef;
-    private void Awake()
+    private void Start()
     {
         SC_Platform plat = GetComponent<SC_Platform>();
-        if (plat != null && GameManagerRef != null)
-            GameManagerRef.Platforms.Add(plat);
-        else
+        if(plat != null)
         {
-            Debug.Log("GameManagerRef not set on platform for start activation");
-        }
+            SC_PlatformManager.PlatformManagerSingleton.ActivatePlatform(plat);
+        }    
     }
 }
 

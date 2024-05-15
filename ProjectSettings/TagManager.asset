@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Resource
+  - FriendlyWeapon
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX

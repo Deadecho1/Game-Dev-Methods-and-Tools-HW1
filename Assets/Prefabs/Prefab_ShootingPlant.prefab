@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1130671813618487181}
   - component: {fileID: 1130671813618487179}
   - component: {fileID: 3030080412677166404}
+  - component: {fileID: 1056628664666980290}
   m_Layer: 0
   m_Name: Prefab_ShootingPlant
   m_TagString: Enemy
@@ -170,6 +171,19 @@ CircleCollider2D:
   m_Offset: {x: -0.0067231655, y: 0.02017057}
   serializedVersion: 2
   m_Radius: 0.522226
+--- !u!114 &1056628664666980290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130671813618487170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917ecfdd0ac112a459e079b09a5aff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingBehavior: {fileID: 1130671813618487179}
 --- !u!1 &1130671814488468660
 GameObject:
   m_ObjectHideFlags: 0

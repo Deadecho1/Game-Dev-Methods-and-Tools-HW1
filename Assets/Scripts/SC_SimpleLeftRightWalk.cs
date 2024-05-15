@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SC_SimpleLeftRightWalk : MonoBehaviour
+public class SC_SimpleLeftRightWalk : EnemyBehavior
 {
     public float speed = 3f;
     public float changeDirectionTime = 2f;
     public float startDirection = 1f;
     private float direction;
     private Rigidbody2D rigid;
-    private void OnEnable()
+
+    public override void Activate(bool on)
     {
-        rigid = GetComponent<Rigidbody2D>();
-        direction = startDirection;
-        StartCoroutine(WaitThenChangeDirection());
+        base.Activate(on);
+        if(on)
+        {
+            direction = startDirection;
+            StartCoroutine(WaitThenChangeDirection());
+        }
     }
-    
-    void FixedUpdate()
+    public override void BehaviorOnFixedUpdate()
     {
         if (direction != 0 && rigid != null)
         {
@@ -27,11 +30,15 @@ public class SC_SimpleLeftRightWalk : MonoBehaviour
             else transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+    private void OnEnable()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+    }
 
     IEnumerator WaitThenChangeDirection()
     {
         yield return new WaitForSeconds(changeDirectionTime);
-        if (gameObject.activeSelf)
+        if (IsActive)
         {
             direction *= -1;
             StartCoroutine(WaitThenChangeDirection());
