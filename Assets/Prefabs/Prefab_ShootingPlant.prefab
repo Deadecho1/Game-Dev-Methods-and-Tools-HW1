@@ -104,7 +104,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013008356, y: 0}
+  m_Offset: {x: -0.0076141357, y: -0.059342086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -115,7 +115,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.89593554, y: 1.2058165}
+  m_Size: {x: 0.6909332, y: 1.0871323}
   m_EdgeRadius: 0
 --- !u!114 &1130671813618487169
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponUsed: {fileID: 1130671814488468658}
-  TimeBetweenShots: 3
+  TimeBetweenShots: 4
 --- !u!58 &3030080412677166404
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -168,9 +168,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0067231655, y: 0.02017057}
+  m_Offset: {x: -0.0067231655, y: 0.063328385}
   serializedVersion: 2
-  m_Radius: 0.522226
+  m_Radius: 0.5653838
 --- !u!114 &1056628664666980290
 MonoBehaviour:
   m_ObjectHideFlags: 0

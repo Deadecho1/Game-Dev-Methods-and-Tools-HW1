@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SC_FadePlatform : SC_Platform
 {
+    public float turnTime = 3;
+
     private bool isActivated = false;
-    private float turnTime = 3;
     private float startTime = 0;
     private SpriteRenderer curSpriteRenderer;
     private BoxCollider2D curBoxCollider2D;
