@@ -6,6 +6,6 @@ public class EndLevelDoor : DoorBase
 {
     public override void Open()
     {
-        SC_GameManager.GameManagerSingleton.EndLevel();
+        SC_GameManager.GameManagerSingleton.EndLevel("Level Complete");
     }
 }

@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class KeyBase : MonoBehaviour
 {
-    public abstract bool OpenDoor(DoorBase door);
+    public string KeyName;
+    //public abstract bool OpenDoor(DoorBase door);
 }

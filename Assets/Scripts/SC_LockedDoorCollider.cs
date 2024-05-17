@@ -20,7 +20,16 @@ public class SC_LockedDoorCollider : MonoBehaviour
                     keyResource.UseKey(key);
                     door.Open();
                 }
+                else
+                {
+                    SC_UIMessageManager.instance.DisplayMessage("You require " + door.KeysRequired + " of " + key.KeyName);
+                }
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        SC_UIMessageManager.instance.RemoveMessage();
     }
 }

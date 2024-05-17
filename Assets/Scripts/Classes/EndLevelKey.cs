@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndLevelKey : KeyBase
 {
+    /*
     public override bool OpenDoor(DoorBase door)
     {
         EndLevelDoor endLevelDoor = door as EndLevelDoor;
@@ -14,4 +15,5 @@ public class EndLevelKey : KeyBase
         }
         return false;
     }
+    */
 }

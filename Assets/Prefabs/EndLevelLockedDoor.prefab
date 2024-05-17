@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9122961961288900350}
   - component: {fileID: 9122961961288900351}
   - component: {fileID: 9122961961288900320}
-  - component: {fileID: 9122961961288900321}
+  - component: {fileID: 5244278227451391926}
   - component: {fileID: 9122961961288900348}
   m_Layer: 0
   m_Name: EndLevelLockedDoor
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 9122961961288900320}
-  key: {fileID: 9122961961288900321}
+  key: {fileID: 0}
 --- !u!114 &9122961961288900320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeysRequired: 1
---- !u!114 &9122961961288900321
+--- !u!114 &5244278227451391926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6f104127a2b9843bfadc9298520caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeyName: Red
 --- !u!61 &9122961961288900348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.42, y: 5.11}
+    oldSize: {x: 1, y: 2.1115704}
     newSize: {x: 2.42, y: 5.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

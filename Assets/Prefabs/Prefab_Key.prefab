@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6f104127a2b9843bfadc9298520caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeyName: Red
